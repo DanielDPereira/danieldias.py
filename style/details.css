@@ -25,7 +25,7 @@
 .custom-details.open .content {
   opacity: 1;
   transform: translateY(0);
-  max-height: 500px; /* ajuste conforme necessário */
+  max-height: 5000px; /* ajuste conforme necessário */
   padding: 10px;
   pointer-events: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
