@@ -9,6 +9,10 @@ html, body{
   padding: 0!important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   position: absolute!important;
   width: 100vw!important;
