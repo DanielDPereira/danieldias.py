@@ -3,6 +3,20 @@
 
   const safeText = (value) => (value ?? '').toString();
 
+  function renderAbout(about) {
+    const container = document.getElementById('about-content');
+    if (!container || !about) return;
+
+    const paragraphs = Array.isArray(about.paragraphs)
+      ? about.paragraphs.map((text) => `<p>${safeText(text)}</p>`).join('')
+      : '';
+
+    container.innerHTML = `
+      <p>${safeText(about.greeting)}</p>
+      ${paragraphs}
+    `;
+  }
+
   function renderExperiences(experiences) {
     const container = document.getElementById('experience-list');
     if (!container || !Array.isArray(experiences)) return;
@@ -91,6 +105,7 @@
       }
 
       const data = await response.json();
+      renderAbout(data.about);
       renderExperiences(data.experiences);
       renderCertificates(data.certificates);
       renderSkills(data.skills);
