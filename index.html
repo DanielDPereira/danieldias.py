@@ -1,179 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">  
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Dias Pereira | Portfólio</title>
 
-  <link rel="stylesheet" href="./style/style.css" />
-  <link rel="stylesheet" href="./style/header.css" />
+  <meta name="description" content="Portfólio de Daniel Dias Pereira - Ciência de Dados, Engenharia de Dados, IA, automações e backend.">
 
-  <script src="./assets/script/details.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
 
-      <!-- CSS bootstrap -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-  <title>Daniel | Portifólio</title>
-
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<!-- CSS Icons -->
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-
-<link rel="stylesheet" href="./style/footer.css">
-<link rel="stylesheet" href="./style/details.css">
-<link rel="stylesheet" href="./style/projetos.css">
-<link rel="stylesheet" href="./style/skills.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65QBJW22HF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-65QBJW22HF');
-  </script>
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+  <link rel="stylesheet" href="./style/style.css">
 </head>
-
-<body style="display: flex; flex-direction: column; justify-content: space-between; height: 100vh;">
-
-  <div class="container">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-        
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div id="myNav" class="collapse navbar-collapse justify-content-end">
-    <ul class="navbar-nav ">
-    <li class="nav-item"><a href="./index.html" class="nav-link active">Daniel</a></li>
-    <li class="nav-item"><a href="#portifolio" class="nav-link">Projetos</a></li>    
-
-    </ul>
-    </div>
-    </nav>
-    </div>
-
-  <div align="center">
-    <a href="https://www.linkedin.com/in/daniel-dias-pereira-40219425b/" target="_blank"><h1>Daniel Dias Pereira</h1></a>
-    <img class="foto" src="./assets/imagens/Foto.jpeg"/>
+<body>
+  <div class="bg-effects" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="grid-overlay"></span>
   </div>
 
-    <div class="redes-sociais" align="center">
-        <a href="https://www.github.com/danieldpereira/" target="_blank"> <i class="ri-github-fill"></i> </a>
-        <a href="https://www.linkedin.com/in/daniel-dias-pereira-40219425b/" target="_blank"> <i class="ri-linkedin-fill"></i> </a>
-        <a id="curriculo" href="assets/Currículo_Daniel Dias Pereira.pdf"  download target="_blank"><i class="ri-file-download-fill"></i>&nbsp;Dowload CV</a>
+  <header class="header">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="brand" id="brand-name">Daniel Dias Pereira</a>
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+        <i class="ri-menu-3-line"></i>
+      </button>
+      <nav class="nav" id="site-nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#experiencias">Experiência</a>
+        <a href="#skills">Skills</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#certificados">Certificados</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </div>
+  </header>
 
-  <div class="texto1">
+  <main>
+    <section id="inicio" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow" id="hero-eyebrow">Dados • IA • Backend</p>
+          <h1 id="hero-title">Portfólio de Daniel Dias Pereira</h1>
+          <p class="hero-description" id="hero-description"></p>
 
-    <br>
+          <div class="hero-actions" id="hero-actions"></div>
 
-    <div class="custom-details">
-        <div class="summary"><b><h2> > Quem sou eu?</h2></b></div>
-      <div id="about-content" class="content"></div>
-    </div>
-
-    <br>
-
-    <div class="custom-details" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-        <div class="summary"><b><h2> > Experiência</h2></b></div>
-        <div class="content">
-        <ul id="experience-list"></ul>
+          <div class="socials" id="socials-list"></div>
         </div>
-    </div>
 
-    <br>
-
-    <div class="custom-details" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-        <div class="summary"><b><h2> > Certificados</h2></b></div>
-        <div class="content">
-        <ul id="certificates-list"></ul>
-        </div>
-    </div>
-
-    <br>
-
-    <div class="custom-details" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-        <div class="summary"><b><h2> > Skills</h2></b></div>
-        <div class="content">
-            <p>Como desenvolvedor, apresento habilidades em:</p>
-            <section class="skills">
-  <h2>Tecnologias 💻</h2>
-  <div id="skills-grid-dynamic" class="skills-grid"></div>
-</section>
-
-        </div>
-    </div>
-   
-    <br>
-
-    <div id="portifolio" class="custom-details" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-      <div class="summary"><b><h2> > Projetos</h2></b></div>
-      <div class="content">
-<section id="projects">
-  <div id="projects-grid-dynamic" class="projects-grid"></div>
-</section>
-
+        <aside class="hero-side">
+          <img src="./assets/imagens/Foto.jpeg" alt="Foto de Daniel Dias Pereira" class="profile-photo">
+          <div class="stats-grid" id="stats-grid"></div>
+        </aside>
       </div>
-    </div>
+    </section>
 
-    <br>
-    
-  </div>
+    <section id="sobre" class="section">
+      <div class="container section-card">
+        <div class="section-head">
+          <p class="eyebrow">Quem sou eu</p>
+          <h2>Minha jornada</h2>
+        </div>
+        <div id="about-content" class="about-content"></div>
+      </div>
+    </section>
+
+    <section id="experiencias" class="section">
+      <div class="container section-card">
+        <div class="section-head">
+          <p class="eyebrow">Experiência</p>
+          <h2>Trajetória profissional</h2>
+        </div>
+        <div id="experience-list" class="timeline"></div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container section-card">
+        <div class="section-head">
+          <p class="eyebrow">Stack principal</p>
+          <h2>Tecnologias e ferramentas</h2>
+        </div>
+        <div id="skills-grid" class="skills-grid"></div>
+      </div>
+    </section>
+
+    <section id="projetos" class="section">
+      <div class="container section-card">
+        <div class="section-head">
+          <p class="eyebrow">Projetos</p>
+          <h2>Projetos em destaque</h2>
+        </div>
+        <div id="projects-grid" class="projects-grid"></div>
+      </div>
+    </section>
+
+    <section id="certificados" class="section">
+      <div class="container section-card">
+        <div class="section-head">
+          <p class="eyebrow">Certificados</p>
+          <h2>Formação contínua</h2>
+        </div>
+        <ul id="certificates-list" class="certificates-list"></ul>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container section-card contact-card">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2>Vamos construir algo juntos</h2>
+          <p id="contact-message"></p>
+        </div>
+        <div class="contact-actions" id="contact-actions"></div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <div class="footer__container">
-
-        <hr class="footer__divider">
-
-        <div class="footer__bottom">
-            <span class="copyright">&copy; 2025 DanielDPereira. Todos os direitos reservados.</span>
-            <ul class="footer__list">
-
-                <li class="footer__list-item">
-                    <a href="https://www.github.com/DanielDPereira" class="footer__list-link" target="_blank">
-                        <i class="ri-github-fill"></i>
-                    </a>
-                </li>
-                <li class="footer__list-item">
-                    <a href="https://www.linkedin.com/in/daniel-dias-pereira-40219425b/" class="footer__list-link" target="_blank">
-                        <i class="ri-linkedin-fill"></i>
-                    </a>
-                </li>
-
-                <li class="footer__list-item">
-                    <a href="mailto:danieldpereira.dev@gmail.com" class="footer__list-link">
-                        <i class="ri-mail-line"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <div class="container footer-content">
+      <p id="footer-text">© 2026 Daniel Dias Pereira</p>
+      <div class="socials" id="footer-socials"></div>
     </div>
   </footer>
-  
+
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-modal="true"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Fechar modal">
+        <i class="ri-close-line"></i>
+      </button>
+
+      <div class="modal-slider" id="modal-slider"></div>
+
+      <div class="modal-content">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+
+        <div>
+          <h4>Tecnologias</h4>
+          <div id="modal-tech" class="chip-list"></div>
+        </div>
+
+        <div>
+          <h4>Categoria e contexto</h4>
+          <p id="modal-meta" class="muted"></p>
+        </div>
+
+        <div id="modal-links" class="project-links"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./portfolio-render.js" defer></script>
 </body>
-
-
-<!-- Meu JS -->
-<script src="./assets/script/details.js"></script>
-<script src="./portfolio-render.js"></script>
-
-<!-- script bootstrap-->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-
-<script>
-  AOS.init();
-</script>
-
 </html>

@@ -1,25 +1,94 @@
 {
+  "profile": {
+    "name": "Daniel Dias Pereira",
+    "heroEyebrow": "Ciência de Dados • Engenharia de Dados • IA • Backend",
+    "heroTitle": "Transformando dados em soluções inteligentes",
+    "heroDescription": "Estudante e desenvolvedor com foco em Python, n8n, automações, engenharia de dados e aplicações orientadas por IA. Construo soluções práticas para problemas reais com mentalidade analítica e visão de produto.",
+    "contactMessage": "Se você procura alguém com energia para aprender rápido, construir com qualidade e evoluir junto com o time, vamos conversar.",
+    "location": "São José dos Campos - SP",
+    "availability": "Disponível para estágio e projetos",
+    "cvUrl": "assets/Currículo_Daniel Dias Pereira.pdf",
+    "email": "danieldpereira.dev@gmail.com",
+    "socials": [
+      {
+        "label": "GitHub",
+        "icon": "ri-github-fill",
+        "url": "https://www.github.com/danieldpereira/"
+      },
+      {
+        "label": "LinkedIn",
+        "icon": "ri-linkedin-fill",
+        "url": "https://www.linkedin.com/in/daniel-dias-pereira-40219425b/"
+      },
+      {
+        "label": "E-mail",
+        "icon": "ri-mail-line",
+        "url": "mailto:danieldpereira.dev@gmail.com"
+      }
+    ],
+    "cta": [
+      {
+        "label": "Baixar CV",
+        "url": "assets/Currículo_Daniel Dias Pereira.pdf",
+        "type": "primary"
+      },
+      {
+        "label": "Ver projetos",
+        "url": "#projetos",
+        "type": "ghost"
+      }
+    ],
+    "stats": [
+      { "value": "12+", "label": "Tecnologias" },
+      { "value": "10+", "label": "Projetos" },
+      { "value": "20+", "label": "Certificados" },
+      { "value": "2", "label": "Experiências profissionais" }
+    ],
+    "footerText": "© 2026 Daniel Dias Pereira. Todos os direitos reservados."
+  },
   "about": {
     "greeting": "Olá, eu sou o Daniel!",
     "paragraphs": [
       "Um estudante apaixonado por tecnologia, inovação e novos desafios.",
-      "Atualmente sou estudante de Análise e Desenvolvimento de Sistemas na FATEC São José dos Campos, com foco em desenvolvimento de software, automação de tarefas, Ciência de Dados e Inteligência Artificial, desenvolvedor em contínua busca de novos aprendizados e na construção de soluções inteligentes utilizando a tecnologia."
+      "Atualmente sou estudante de Análise e Desenvolvimento de Sistemas na FATEC São José dos Campos, com foco em desenvolvimento de software, automação de tarefas, Ciência de Dados e Inteligência Artificial. Sou um desenvolvedor em contínua busca por novos aprendizados e pela construção de soluções inteligentes utilizando tecnologia.",
+      "Minha motivação está em unir backend, dados e IA para criar produtos úteis, com boa experiência para quem usa e base sólida para quem mantém."
+    ],
+    "highlights": [
+      "Foco em Python e n8n para automação e integração inteligente",
+      "Interesse forte em pipelines, ETL e análises orientadas por dados",
+      "Perfil jovem, curioso e orientado à evolução contínua"
     ]
   },
   "experiences": [
     {
-      "title": "Engenharia de prompt & integrações com IA",
+      "title": "Engenharia de Prompt & Integrações com IA",
       "company": "Hunt Sales",
       "companyUrl": "https://huntsales.com.br/",
       "type": "Estágio",
-      "period": "Abril/2025 - Julho/2025"
+      "period": "Abr/2025 - Jul/2025",
+      "location": "Remoto",
+      "description": "Atuação em fluxos com IA para suporte a operações comerciais, com foco em engenharia de prompt e integrações de ferramentas.",
+      "achievements": [
+        "Estruturei prompts com maior consistência para respostas de negócio",
+        "Contribuí em integrações e automações para ganho de produtividade",
+        "Participei da evolução de processos internos orientados por dados"
+      ],
+      "technologies": ["Prompt Engineering", "LLMs", "APIs", "Automação"]
     },
     {
       "title": "Estagiário em Automação de Dados",
       "company": "IACIT Soluções Tecnológicas",
       "companyUrl": "https://www.iacit.com.br/",
       "type": "Estágio",
-      "period": "Novembro/2025 - o momento"
+      "period": "Nov/2025 - Atual",
+      "location": "Presencial/Híbrido",
+      "description": "Desenvolvimento de automações e rotinas de dados para apoiar atividades técnicas e operacionais, com foco em confiabilidade e escala.",
+      "achievements": [
+        "Apoio em fluxos de transformação e organização de dados",
+        "Participação no desenvolvimento de automações com visão de engenharia",
+        "Suporte à melhoria contínua de processos internos"
+      ],
+      "technologies": ["Python", "n8n", "ETL", "SQL"]
     }
   ],
   "certificates": [
@@ -108,69 +177,90 @@
     {
       "name": "Python",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      "alt": "Python"
+      "alt": "Python",
+      "category": "Linguagem"
     },
     {
       "name": "Flask",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
-      "alt": "Flask"
+      "alt": "Flask",
+      "category": "Backend"
     },
     {
       "name": "JavaScript",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      "alt": "JS"
+      "alt": "JavaScript",
+      "category": "Frontend"
     },
     {
       "name": "MySQL",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      "alt": "MySQL"
+      "alt": "MySQL",
+      "category": "Banco de Dados"
     },
     {
       "name": "HTML5",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      "alt": "HTML"
+      "alt": "HTML5",
+      "category": "Frontend"
     },
     {
       "name": "CSS3",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      "alt": "CSS"
+      "alt": "CSS3",
+      "category": "Frontend"
     },
     {
       "name": "Git",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-      "alt": "Git"
+      "alt": "Git",
+      "category": "Versionamento"
     },
     {
       "name": "Github",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-      "alt": "Github"
+      "alt": "Github",
+      "category": "Versionamento"
     },
     {
       "name": "n8n",
       "icon": "./assets/Icons/n8n-color.svg",
-      "alt": "n8n"
+      "alt": "n8n",
+      "category": "Automação"
     },
     {
       "name": "Ollama",
       "icon": "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/ollama.png",
-      "alt": "Ollama"
+      "alt": "Ollama",
+      "category": "IA"
     },
     {
       "name": "OpenAI",
       "icon": "https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico",
-      "alt": "OpenAI"
+      "alt": "OpenAI",
+      "category": "IA"
     },
     {
       "name": "Arduino",
       "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
-      "alt": "Arduino"
+      "alt": "Arduino",
+      "category": "Hardware"
     }
   ],
   "projects": [
     {
       "title": "Sistema de gestão de atestados e avaliação Scrum",
       "description": "Sistema desenvolvido como projeto integrador no primeiro semestre do curso de ADS na Fatec usando o método ágil Scrum.",
+      "longDescription": "Aplicação voltada ao gerenciamento de atestados e acompanhamento de critérios Scrum em contexto acadêmico, com foco em organização e produtividade da equipe.",
+      "category": "Projeto acadêmico",
+      "year": "2023",
+      "status": "Concluído",
       "thumbnail": "./assets/imagens/ThumbProjetos/API1Semestre.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/API1Semestre.png",
+        "./assets/imagens/ThumbProjetos/API1Semestre.png"
+      ],
+      "technologies": ["Scrum", "Web", "Gestão de projeto"],
       "links": [
         {
           "label": "Repositório",
@@ -180,8 +270,17 @@
     },
     {
       "title": "Cálculos com datas",
-      "description": "Cálculadora online desenolvida para calcular a diferença entre duas datas ou a distância em dias de qualquer dia da data atual. Desenvolvida para estudo de JavaScript.",
+      "description": "Calculadora online para calcular diferença entre datas ou distância em dias a partir da data atual.",
+      "longDescription": "Projeto voltado ao estudo de JavaScript para manipulação de datas e construção de interface prática para cálculos temporais.",
+      "category": "Ferramenta web",
+      "year": "2023",
+      "status": "Concluído",
       "thumbnail": "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
+        "./assets/imagens/ThumbProjetos/ProjetoDatas.png"
+      ],
+      "technologies": ["JavaScript", "HTML", "CSS"],
       "links": [
         {
           "label": "Repositório",
@@ -195,8 +294,17 @@
     },
     {
       "title": "Site de vagas BTG Pactual",
-      "description": "Site de vagas desenvolvido e apresentado em grupo, com a metodologia Scrum, para o BTG Pactual durante o Bootcamp de Desenvolvimento de Aplicação Web na Inteli em 2023.",
+      "description": "Site de vagas desenvolvido e apresentado em grupo com metodologia Scrum no Bootcamp da Inteli.",
+      "longDescription": "Projeto colaborativo com foco em experiência de navegação e apresentação estruturada de vagas, seguindo organização ágil em sprints.",
+      "category": "Bootcamp",
+      "year": "2023",
+      "status": "Concluído",
       "thumbnail": "./assets/imagens/ThumbProjetos/ProjetoBTG.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/ProjetoBTG.png",
+        "./assets/imagens/ThumbProjetos/ProjetoBTG.png"
+      ],
+      "technologies": ["HTML", "CSS", "JavaScript", "Scrum"],
       "links": [
         {
           "label": "Repositório",
@@ -210,8 +318,17 @@
     },
     {
       "title": "Meu portfólio pessoal",
-      "description": "Meu portfólio desenvolvido com HTML, CSS e JS, com informações sobre mim, experiência, certificados e habilidades como Dev.",
+      "description": "Portfólio em HTML, CSS e JS com informações sobre trajetória, experiência e habilidades.",
+      "longDescription": "Projeto de apresentação profissional com evolução contínua e foco em comunicação clara da minha jornada e dos meus projetos.",
+      "category": "Portfólio",
+      "year": "2025",
+      "status": "Em evolução",
       "thumbnail": "./assets/imagens/ThumbProjetos/PortfólioPrint.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/PortfólioPrint.png",
+        "./assets/imagens/ThumbProjetos/PortfólioPrint.png"
+      ],
+      "technologies": ["HTML", "CSS", "JavaScript"],
       "links": [
         {
           "label": "Repositório",
@@ -225,8 +342,17 @@
     },
     {
       "title": "Passeio do Cavalo",
-      "description": "Um programa desenvolvido em Python para resolver o Passeio do Cavalo, um desafio de lógica em que um cavalo deve visitar todas as casas de um tabuleiro de xadrez uma única vez.",
+      "description": "Programa em Python para resolver o desafio do Passeio do Cavalo no tabuleiro de xadrez.",
+      "longDescription": "Implementação de lógica algorítmica para percorrer todas as casas do tabuleiro uma única vez, explorando estratégia e otimização.",
+      "category": "Algoritmos",
+      "year": "2024",
+      "status": "Concluído",
       "thumbnail": "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true",
+      "images": [
+        "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true",
+        "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true"
+      ],
+      "technologies": ["Python", "Lógica", "Algoritmos"],
       "links": [
         {
           "label": "Repositório",
@@ -236,8 +362,17 @@
     },
     {
       "title": "QR Code Generator",
-      "description": "Gerador de QR Code 100% client-side. Cria QR Codes estáticos e gratuitos que nunca expiram, codificando diretamente o link, usando a biblioteca qrcode.js.",
+      "description": "Gerador de QR Code 100% client-side, com criação de códigos estáticos gratuitos que não expiram.",
+      "longDescription": "Aplicação web leve que codifica o link diretamente no QR Code com uso da biblioteca qrcode.js e interface amigável.",
+      "category": "Ferramenta web",
+      "year": "2025",
+      "status": "Concluído",
       "thumbnail": "./assets/imagens/ThumbProjetos/QrCodeJS.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/QrCodeJS.png",
+        "./assets/imagens/ThumbProjetos/QrCodeJS.png"
+      ],
+      "technologies": ["JavaScript", "HTML", "CSS", "qrcode.js"],
       "links": [
         {
           "label": "Repositório",
@@ -255,8 +390,17 @@
     },
     {
       "title": "PalavrometrIA",
-      "description": "Ferramenta web para análise de texto com Processamento de Linguagem Natural e retorna um dashboard com métricas importantes e reconhecimento de entidades. Tecnologias utilizadas: Python, Flask, SpaCy (PLN), PyMuPDF, BeautifulSoup, JavaScript e Chart.js.",
+      "description": "Ferramenta web para análise de texto com PLN e dashboard de métricas com reconhecimento de entidades.",
+      "longDescription": "Projeto de IA aplicada para extração de insights de textos com pipeline Python e interface para visualização das métricas.",
+      "category": "IA e NLP",
+      "year": "2025",
+      "status": "Concluído",
       "thumbnail": "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true",
+      "images": [
+        "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true",
+        "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true"
+      ],
+      "technologies": ["Python", "Flask", "SpaCy", "PyMuPDF", "BeautifulSoup", "JavaScript", "Chart.js"],
       "links": [
         {
           "label": "Repositório",
@@ -270,8 +414,17 @@
     },
     {
       "title": "JSON -> TOON converter n8n",
-      "description": "Workflow desenvolvido no n8n para converter JSON para o formato TOON, voltado a alimentar agentes de IA de forma mais eficaz e economizando tokens.",
+      "description": "Workflow no n8n para converter JSON para formato TOON e melhorar eficiência de agentes de IA.",
+      "longDescription": "Projeto voltado à automação de transformação de dados para reduzir consumo de tokens e melhorar a qualidade de contexto em pipelines com IA.",
+      "category": "Automação e IA",
+      "year": "2025",
+      "status": "Concluído",
       "thumbnail": "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png",
+        "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png"
+      ],
+      "technologies": ["n8n", "JSON", "Automação", "IA"],
       "links": [
         {
           "label": "Repositório",
@@ -285,8 +438,17 @@
     },
     {
       "title": "Monitor de Juro Real (ETL Financeiro)",
-      "description": "Pipeline ETL completo desenvolvido em Python que coleta dados via API do Banco Central e calcula o juro real da renda fixa brasileira, gerando datasets tratados e gráficos históricos.",
+      "description": "Pipeline ETL em Python que coleta dados do Banco Central e calcula juro real da renda fixa brasileira.",
+      "longDescription": "Projeto completo de engenharia de dados com coleta, tratamento e visualização histórica para apoiar análise financeira baseada em dados públicos.",
+      "category": "Engenharia de Dados",
+      "year": "2025",
+      "status": "Concluído",
       "thumbnail": "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
+        "./assets/imagens/ThumbProjetos/ETL Juro Real.png"
+      ],
+      "technologies": ["Python", "ETL", "API Banco Central", "Pandas", "Data Visualization"],
       "links": [
         {
           "label": "Repositório",
@@ -300,8 +462,17 @@
     },
     {
       "title": "Crypto Miner Pulse (Dashboard de Mineração)",
-      "description": "Dashboard web interativo para monitoramento de mineração de criptomoedas em tempo real. A aplicação consome dados via API local do minerador (XMRig) e apresenta métricas em gráficos claros e responsivos.",
+      "description": "Dashboard web interativo para monitoramento de mineração de criptomoedas em tempo real.",
+      "longDescription": "Aplicação orientada a observabilidade que consome dados da API local do XMRig e apresenta métricas em painéis com foco em clareza e tomada de decisão.",
+      "category": "Dashboard de Dados",
+      "year": "2025",
+      "status": "Concluído",
       "thumbnail": "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png",
+        "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png"
+      ],
+      "technologies": ["JavaScript", "Dashboard", "API", "Visualização de dados"],
       "links": [
         {
           "label": "Repositório",
