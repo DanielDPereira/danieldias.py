@@ -528,10 +528,13 @@ body.modal-open {
 
 .modal-slider {
   position: relative;
+  background: #070d1f;
+  min-height: 280px;
 }
 
 .slide {
   display: none;
+  width: 100%;
 }
 
 .slide.active {
@@ -540,8 +543,10 @@ body.modal-open {
 
 .slide img {
   width: 100%;
-  max-height: 420px;
-  object-fit: cover;
+  height: min(72vh, 620px);
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .slider-btn {

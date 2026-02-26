@@ -55,7 +55,7 @@
     ],
     "highlights": [
       "Foco em Python e n8n para automação e integração inteligente",
-      "Interesse forte em pipelines, ETL e análises orientadas por dados",
+      "Interesse forte em IA, pipelines, ETL e análises orientadas por dados",
       "Perfil jovem, curioso e orientado à evolução contínua"
     ]
   },
@@ -66,14 +66,14 @@
       "companyUrl": "https://huntsales.com.br/",
       "type": "Estágio",
       "period": "Abr/2025 - Jul/2025",
-      "location": "Remoto",
-      "description": "Atuação em fluxos com IA para suporte a operações comerciais, com foco em engenharia de prompt e integrações de ferramentas.",
+      "location": "Presencial",
+      "description": "Desenvolvimento de agentes de IA personalizados para automatizar processos comerciais e realizar contato via Whatsapp e ligação com leads de empresas parceiras.",
       "achievements": [
-        "Estruturei prompts com maior consistência para respostas de negócio",
-        "Contribuí em integrações e automações para ganho de produtividade",
-        "Participei da evolução de processos internos orientados por dados"
+        "Estruturação e otimização de prompts para melhorar a consistência e qualidade das respostas dos agentes de IA, personalizados para a necessidade de cada cliente",
+        "Desenvolvimento de integrações com CRM e APIs de sistemas para automações com IA",
+        "Apoio na evolução de processos internos orientados por dados"
       ],
-      "technologies": ["Prompt Engineering", "LLMs", "APIs", "Automação"]
+      "technologies": ["Prompt Engineering", "n8n", "LLMs", "APIs", "Automação"]
     },
     {
       "title": "Estagiário em Automação de Dados",
@@ -81,14 +81,15 @@
       "companyUrl": "https://www.iacit.com.br/",
       "type": "Estágio",
       "period": "Nov/2025 - Atual",
-      "location": "Presencial/Híbrido",
-      "description": "Desenvolvimento de automações e rotinas de dados para apoiar atividades técnicas e operacionais, com foco em confiabilidade e escala.",
+      "location": "Remoto",
+      "description": "Atuação em uma célula de inovação focada em automações com IA e dados para o desenvolvimento soluções personalizadas para clientes, utilizando Python, n8n e tecnologias de IA para transformar dados em insights e ações automatizadas.",
       "achievements": [
         "Apoio em fluxos de transformação e organização de dados",
-        "Participação no desenvolvimento de automações com visão de engenharia",
-        "Suporte à melhoria contínua de processos internos"
+        "Participação no desenvolvimento de automações com Inteligência Artificial e visão de engenharia",
+        "Desenvolvimento de automações inteligentes voltadas e melhorias de processos internos de diferentes áreas da empresa",
+        "Desenvolvimento de soluções personalizadas a clientes, conectando sistemas e desenvolvendo soluções"
       ],
-      "technologies": ["Python", "n8n", "ETL", "SQL"]
+      "technologies": ["Python", "n8n", "LLMs", "Ollama", "SQL", "Docker", "Automação"]
     }
   ],
   "certificates": [
