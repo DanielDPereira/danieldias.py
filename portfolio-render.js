@@ -338,6 +338,73 @@
     currentSlide = 0;
   }
 
+  function applyRevealAttributes() {
+    const immediateTargets = [
+      { selector: '.hero-content', direction: 'left', baseDelay: 60 },
+      { selector: '.hero-side', direction: 'right', baseDelay: 140 },
+      { selector: '#sobre .section-card', direction: 'left', baseDelay: 40 },
+      { selector: '#formacao .section-card', direction: 'right', baseDelay: 40 },
+      { selector: '#experiencias .section-card', direction: 'left', baseDelay: 40 },
+      { selector: '#skills .section-card', direction: 'right', baseDelay: 40 },
+      { selector: '#projetos .section-card', direction: 'left', baseDelay: 40 },
+      { selector: '#certificados .section-card', direction: 'right', baseDelay: 40 },
+      { selector: '#contato .section-card', direction: 'left', baseDelay: 40 }
+    ];
+
+    immediateTargets.forEach(({ selector, direction, baseDelay }) => {
+      const element = document.querySelector(selector);
+      if (!element) return;
+      element.dataset.reveal = direction;
+      element.style.setProperty('--reveal-delay', `${baseDelay}ms`);
+    });
+
+    const staggerTargets = [
+      '.stat-card',
+      '.education-item',
+      '.timeline-item',
+      '.skill-card',
+      '.project-card',
+      '.certificates-list li',
+      '.contact-actions .btn'
+    ];
+
+    staggerTargets.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((element, index) => {
+        element.dataset.reveal = 'up';
+        const delay = Math.min(index * 90, 600);
+        element.style.setProperty('--reveal-delay', `${delay}ms`);
+      });
+    });
+  }
+
+  function initScrollReveal() {
+    const revealElements = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (!revealElements.length) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) {
+      revealElements.forEach((element) => element.classList.add('revealed'));
+      return;
+    }
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        root: null,
+        threshold: 0.16,
+        rootMargin: '0px 0px -8% 0px'
+      }
+    );
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+  }
+
   function attachGlobalEvents() {
     const modal = document.getElementById('project-modal');
     const closeButton = document.getElementById('modal-close');
@@ -411,6 +478,8 @@
       renderSkills(data.skills);
       renderProjects(data.projects);
       renderCertificates(data.certificates);
+      applyRevealAttributes();
+      initScrollReveal();
       attachGlobalEvents();
     } catch (error) {
       console.error('Falha ao carregar dados do portfólio:', error);

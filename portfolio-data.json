@@ -283,6 +283,7 @@
       "thumbnail": "./assets/imagens/ThumbProjetos/API1Semestre.png",
       "images": [
         "./assets/imagens/ThumbProjetos/API1Semestre.png",
+        "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
         "./assets/imagens/ThumbProjetos/API1Semestre.png"
       ],
       "technologies": ["Python", "Flask", "HTML", "CSS", "JavaScript", "Scrum"],
