@@ -318,6 +318,18 @@ body.modal-open {
   font-size: 1.08rem;
 }
 
+.education-item .education-degree {
+  font-size: 1.16rem;
+  line-height: 1.35;
+  margin-bottom: 0.2rem;
+}
+
+.education-item .education-institution {
+  font-weight: 600;
+  color: #d8e1f8;
+  margin-bottom: 0.1rem;
+}
+
 .education-item p {
   color: var(--muted);
 }

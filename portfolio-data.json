@@ -70,7 +70,7 @@
     },
     {
       "institution": "Fatec São José dos Campos - Prof. Jessen Vidal",
-      "degree": "Curso Superior de Tecnologia (CST), Análise e Desenvolvimento de Sistemas",
+      "degree": "Análise e Desenvolvimento de Sistemas",
       "period": "fev de 2025 - dez de 2027",
       "type": "Graduação",
       "issuer": "Centro Paula Souza",
@@ -242,6 +242,12 @@
       "category": "Versionamento"
     },
     {
+      "name": "Docker",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg",
+      "alt": "Docker",
+      "category": "Infraestrutura"
+    },
+    {
       "name": "n8n",
       "icon": "./assets/Icons/n8n-color.svg",
       "alt": "n8n",
@@ -269,8 +275,8 @@
   "projects": [
     {
       "title": "Sistema de gestão de atestados e avaliação Scrum",
-      "description": "Sistema desenvolvido como projeto integrador no primeiro semestre do curso de ADS na Fatec usando o método ágil Scrum.",
-      "longDescription": "Aplicação voltada ao gerenciamento de atestados e acompanhamento de critérios Scrum em contexto acadêmico, com foco em organização e produtividade da equipe.",
+      "description": "Plataforma web completa para gerenciamento de atestados médicos e avaliação de equipes Scrum, desenvolvida como Projeto Integrador (API) no 1º semestre de ADS na Fatec.",
+      "longDescription": "Aplicação fullstack desenvolvida em equipe com metodologia Scrum, composta por frontend em HTML, CSS e JavaScript e backend em Python/Flask. O sistema permite que alunos enviem e acompanhem atestados médicos e que funcionários os aprovem ou rejeitem. Conta ainda com um módulo de avaliação 360° para equipes ágeis, cadastro de times, geração de relatórios de desempenho e controle de acesso por perfis. O projeto foi entregue em três sprints com backlog priorizado e protótipo em Figma.",
       "category": "Projeto acadêmico",
       "year": "2023",
       "status": "Concluído",
@@ -279,7 +285,7 @@
         "./assets/imagens/ThumbProjetos/API1Semestre.png",
         "./assets/imagens/ThumbProjetos/API1Semestre.png"
       ],
-      "technologies": ["Scrum", "Web", "Gestão de projeto"],
+      "technologies": ["Python", "Flask", "HTML", "CSS", "JavaScript", "Scrum"],
       "links": [
         {
           "label": "Repositório",
@@ -288,9 +294,9 @@
       ]
     },
     {
-      "title": "Cálculos com datas",
-      "description": "Calculadora online para calcular diferença entre datas ou distância em dias a partir da data atual.",
-      "longDescription": "Projeto voltado ao estudo de JavaScript para manipulação de datas e construção de interface prática para cálculos temporais.",
+      "title": "Cálculos com Datas",
+      "description": "Calculadora web para calcular diferenças entre datas ou a distância em dias a partir da data atual, com interface simples e responsiva.",
+      "longDescription": "Projeto desenvolvido com foco no estudo prático de manipulação de datas em JavaScript puro. A ferramenta permite ao usuário calcular o número de dias entre duas datas ou a distância de uma data em relação ao dia atual, exibindo o resultado de forma clara e imediata. Exercita conceitos de DOM, eventos e o objeto Date nativo do JS.",
       "category": "Ferramenta web",
       "year": "2023",
       "status": "Concluído",
@@ -312,9 +318,9 @@
       ]
     },
     {
-      "title": "Site de vagas BTG Pactual",
-      "description": "Site de vagas desenvolvido e apresentado em grupo com metodologia Scrum no Bootcamp da Inteli.",
-      "longDescription": "Projeto colaborativo com foco em experiência de navegação e apresentação estruturada de vagas, seguindo organização ágil em sprints.",
+      "title": "Site de Vagas BTG Pactual",
+      "description": "Portal de vagas de emprego desenvolvido em equipe durante o Bootcamp da Inteli, com foco em experiência de navegação e organização ágil por sprints.",
+      "longDescription": "Projeto colaborativo entregue no Bootcamp da Inteli em parceria com o BTG Pactual. O site apresenta oportunidades de carreira com filtragem e navegação intuitiva, foi construído com HTML, CSS e JavaScript e gerenciado com metodologia Scrum. A experiência consolidou competências em trabalho em equipe, prototipação rápida e entrega iterativa.",
       "category": "Bootcamp",
       "year": "2023",
       "status": "Concluído",
@@ -336,9 +342,9 @@
       ]
     },
     {
-      "title": "Meu portfólio pessoal",
-      "description": "Portfólio em HTML, CSS e JS com informações sobre trajetória, experiência e habilidades.",
-      "longDescription": "Projeto de apresentação profissional com evolução contínua e foco em comunicação clara da minha jornada e dos meus projetos.",
+      "title": "Portfólio Pessoal",
+      "description": "Site de portfólio desenvolvido do zero com HTML, CSS e JavaScript para apresentar minha trajetória, habilidades técnicas e projetos de forma profissional.",
+      "longDescription": "Projeto de apresentação profissional construído com foco em clareza visual, performance e comunicação. Conta com seções de experiência, habilidades e projetos, além de carregamento dinâmico de dados via JSON. O portfólio está em evolução contínua, incorporando melhorias de design e novas funcionalidades conforme o avanço na carreira.",
       "category": "Portfólio",
       "year": "2025",
       "status": "Em evolução",
@@ -361,8 +367,8 @@
     },
     {
       "title": "Passeio do Cavalo",
-      "description": "Programa em Python para resolver o desafio do Passeio do Cavalo no tabuleiro de xadrez.",
-      "longDescription": "Implementação de lógica algorítmica para percorrer todas as casas do tabuleiro uma única vez, explorando estratégia e otimização.",
+      "description": "Implementação em Python do clássico problema do Passeio do Cavalo, que percorre todas as casas de um tabuleiro de xadrez 8×8 sem repetição.",
+      "longDescription": "Solução algorítmica para o problema combinatório do Passeio do Cavalo utilizando backtracking com a heurística de Warnsdorff, que prioriza movimentos para casas com menos opções futuras. O programa exibe o trajeto em tempo real por meio de uma animação ASCII, evidenciando a lógica de busca e otimização aplicada.",
       "category": "Algoritmos",
       "year": "2024",
       "status": "Concluído",
@@ -371,7 +377,7 @@
         "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true",
         "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true"
       ],
-      "technologies": ["Python", "Lógica", "Algoritmos"],
+      "technologies": ["Python", "Algoritmos", "Backtracking"],
       "links": [
         {
           "label": "Repositório",
@@ -381,8 +387,8 @@
     },
     {
       "title": "QR Code Generator",
-      "description": "Gerador de QR Code 100% client-side, com criação de códigos estáticos gratuitos que não expiram.",
-      "longDescription": "Aplicação web leve que codifica o link diretamente no QR Code com uso da biblioteca qrcode.js e interface amigável.",
+      "description": "Gerador de QR Code 100% client-side que cria códigos estáticos, gratuitos e sem expiração diretamente no navegador, sem envio de dados a servidores externos.",
+      "longDescription": "Aplicação web leve que utiliza a biblioteca qrcode.js para codificar URLs diretamente no QR Code, eliminando qualquer dependência de backend. O projeto prioriza privacidade e simplicidade: basta inserir o link, gerar o código e baixar a imagem. Apresenta interface limpa e responsiva com feedback visual imediato.",
       "category": "Ferramenta web",
       "year": "2025",
       "status": "Concluído",
@@ -402,15 +408,15 @@
           "url": "https://danieldpereira.github.io/qr-code-generator/"
         },
         {
-          "label": "Post Linkedin",
+          "label": "Post LinkedIn",
           "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_qrcode-desenvolvimentoweb-opensource-activity-7388308383453298688-gYP4?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
         }
       ]
     },
     {
       "title": "PalavrometrIA",
-      "description": "Ferramenta web para análise de texto com PLN e dashboard de métricas com reconhecimento de entidades.",
-      "longDescription": "Projeto de IA aplicada para extração de insights de textos com pipeline Python e interface para visualização das métricas.",
+      "description": "Analisador web de textos com PLN que extrai estatísticas linguísticas, palavras-chave, entidades nomeadas, legibilidade e gráficos — a partir de texto colado, URL ou arquivo.",
+      "longDescription": "Aplicação fullstack em Python/Flask que aplica uma pipeline completa de Processamento de Linguagem Natural com SpaCy. Aceita múltiplas fontes de entrada (texto, URL via BeautifulSoup e arquivos .txt/.pdf/.docx via PyMuPDF) e retorna um dashboard com contagem de palavras, distribuição gramatical (POS), frequência de termos, reconhecimento de entidades (NER), índice de legibilidade Gulpease e tempo estimado de leitura. Os resultados são visualizados com Chart.js e podem ser exportados como PDF via FPDF. Suporta textos em português e inglês com detecção automática de idioma.",
       "category": "IA e NLP",
       "year": "2025",
       "status": "Concluído",
@@ -426,15 +432,15 @@
           "url": "https://github.com/DanielDPereira/PalavrometrIA"
         },
         {
-          "label": "Post Linkedin",
+          "label": "Post LinkedIn",
           "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_inteligaeanciaartificial-ia-pln-activity-7390191978845560832-YZrR/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
         }
       ]
     },
     {
-      "title": "JSON -> TOON converter n8n",
-      "description": "Workflow no n8n para converter JSON para formato TOON e melhorar eficiência de agentes de IA.",
-      "longDescription": "Projeto voltado à automação de transformação de dados para reduzir consumo de tokens e melhorar a qualidade de contexto em pipelines com IA.",
+      "title": "JSON → TOON Converter (n8n)",
+      "description": "Workflow no n8n que converte estruturas JSON para o formato TOON, reduzindo o consumo de tokens e melhorando a qualidade de contexto em pipelines com agentes de IA.",
+      "longDescription": "Automação desenvolvida no n8n para transformar dados JSON verbosos no formato TOON (Text-Oriented Object Notation), uma representação mais compacta e eficiente para consumo por modelos de linguagem. O workflow é especialmente útil em pipelines de IA onde o contexto precisa ser denso em informação e econômico em tokens, contribuindo diretamente para a qualidade das respostas dos agentes e redução de custos de inferência.",
       "category": "Automação e IA",
       "year": "2025",
       "status": "Concluído",
@@ -450,15 +456,15 @@
           "url": "https://github.com/DanielDPereira/n8n-json2toon-converter"
         },
         {
-          "label": "Post Linkedin",
+          "label": "Post LinkedIn",
           "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_n8n-tecnologia-inteligenciaartificial-activity-7394390940435767296-9Ydx?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
         }
       ]
     },
     {
       "title": "Monitor de Juro Real (ETL Financeiro)",
-      "description": "Pipeline ETL em Python que coleta dados do Banco Central e calcula juro real da renda fixa brasileira.",
-      "longDescription": "Projeto completo de engenharia de dados com coleta, tratamento e visualização histórica para apoiar análise financeira baseada em dados públicos.",
+      "description": "Pipeline ETL em Python que coleta dados do Banco Central do Brasil, calcula o juro real da renda fixa e gera visualizações históricas para análise financeira.",
+      "longDescription": "Projeto de engenharia de dados que implementa as três etapas de um pipeline ETL: extração de indicadores financeiros via API pública do Banco Central (SELIC e IPCA), transformação e cálculo do juro real com Pandas, e carregamento dos resultados em visualizações interativas. O projeto demonstra domínio de coleta de dados de APIs REST, tratamento de séries temporais e apresentação de informações financeiras baseadas em dados públicos.",
       "category": "Engenharia de Dados",
       "year": "2025",
       "status": "Concluído",
@@ -474,15 +480,15 @@
           "url": "https://github.com/DanielDPereira/etl-juro-real-brasil"
         },
         {
-          "label": "Post Linkedin",
+          "label": "Post LinkedIn",
           "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_python-datascience-financas-activity-7419545810574655488-BpFf?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
         }
       ]
     },
     {
-      "title": "Crypto Miner Pulse (Dashboard de Mineração)",
-      "description": "Dashboard web interativo para monitoramento de mineração de criptomoedas em tempo real.",
-      "longDescription": "Aplicação orientada a observabilidade que consome dados da API local do XMRig e apresenta métricas em painéis com foco em clareza e tomada de decisão.",
+      "title": "Crypto Miner Pulse",
+      "description": "Dashboard web interativo para monitoramento em tempo real de mineração de criptomoedas, consumindo a API local do XMRig e exibindo métricas operacionais em painéis visuais.",
+      "longDescription": "Aplicação orientada a observabilidade que se conecta à API REST do minerador XMRig e apresenta métricas como hashrate, aceitações, rejeições, uso de CPU e histórico de desempenho em dashboards dinâmicos. O projeto demonstra integração com APIs locais, atualização em tempo real sem frameworks pesados e boas práticas de visualização de dados para apoio à tomada de decisão.",
       "category": "Dashboard de Dados",
       "year": "2025",
       "status": "Concluído",
@@ -502,7 +508,7 @@
           "url": "https://danieldpereira.github.io/crypto-miner-pulse/"
         },
         {
-          "label": "Post Linkedin",
+          "label": "Post LinkedIn",
           "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_dataanalytics-dashboard-webdevelopment-activity-7427096690605649920-bj0s?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
         }
       ]

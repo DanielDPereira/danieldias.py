@@ -151,8 +151,9 @@
         return `
           <article class="education-item">
             <header>
-              <h3>${safeText(item.institution)}</h3>
-              <p class="muted">${safeText(item.degree)} • ${safeText(item.period)}</p>
+              <h3 class="education-degree">${safeText(item.degree)}</h3>
+              <p class="education-institution muted">${safeText(item.institution)}</p>
+              <p class="muted">${safeText(item.period)}</p>
               <p class="muted">${safeText(item.type)}${item.issuer ? ` • ${safeText(item.issuer)}` : ''}</p>
             </header>
             <p>${safeText(item.description)}</p>
