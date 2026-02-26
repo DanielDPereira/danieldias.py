@@ -51,7 +51,7 @@
     "paragraphs": [
       "Um estudante apaixonado por tecnologia, inovação e novos desafios.",
       "Atualmente sou estudante de Análise e Desenvolvimento de Sistemas na FATEC São José dos Campos, com foco em desenvolvimento de software, automação de tarefas, Ciência de Dados e Inteligência Artificial. Sou um desenvolvedor em contínua busca por novos aprendizados e pela construção de soluções inteligentes utilizando tecnologia.",
-      "Minha motivação está em unir backend, dados e IA para criar produtos úteis, com boa experiência para quem usa e base sólida para quem mantém."
+      "Minha motivação está em unir desenvolvimento backend, dados e IA para criar produtos úteis, com boa experiência para quem usa e base sólida para quem mantém."
     ],
     "highlights": [
       "Foco em Python e n8n para automação e integração inteligente",
@@ -59,6 +59,24 @@
       "Perfil jovem, curioso e orientado à evolução contínua"
     ]
   },
+  "education": [
+        {
+      "institution": "PIC - Programa de Iniciação Científica Jr. (OBMEP)",
+      "degree": "Programa de Iniciação Científica em Matemática",
+      "period": "fev de 2022 - dez de 2022",
+      "type": "Formação complementar",
+      "issuer": "OBMEP / Ministério da Educação",
+      "description": "Programa voltado a alunos premiados da OBMEP para aprofundamento científico em matemática, com atividades orientadas por professores qualificados de instituições de ensino superior e pesquisa."
+    },
+    {
+      "institution": "Fatec São José dos Campos - Prof. Jessen Vidal",
+      "degree": "Curso Superior de Tecnologia (CST), Análise e Desenvolvimento de Sistemas",
+      "period": "fev de 2025 - dez de 2027",
+      "type": "Graduação",
+      "issuer": "Centro Paula Souza",
+      "description": "Formação superior em tecnologia com foco em desenvolvimento de software, engenharia de sistemas, banco de dados e resolução de problemas com visão prática de mercado."
+    }
+  ],
   "experiences": [
     {
       "title": "Engenharia de Prompt & Integrações com IA",

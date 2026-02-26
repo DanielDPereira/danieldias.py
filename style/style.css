@@ -302,6 +302,26 @@ body.modal-open {
   font-weight: 600;
 }
 
+.education-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.education-item {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: var(--card);
+}
+
+.education-item h3 {
+  font-size: 1.08rem;
+}
+
+.education-item p {
+  color: var(--muted);
+}
+
 .timeline {
   display: grid;
   gap: 1rem;

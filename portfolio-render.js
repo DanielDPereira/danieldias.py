@@ -138,6 +138,31 @@
       .join('');
   }
 
+  function renderEducation(education) {
+    const container = document.getElementById('education-list');
+    if (!container || !Array.isArray(education)) return;
+
+    container.innerHTML = education
+      .map((item) => {
+        const details = Array.isArray(item.details)
+          ? item.details.map((detail) => `<li>${safeText(detail)}</li>`).join('')
+          : '';
+
+        return `
+          <article class="education-item">
+            <header>
+              <h3>${safeText(item.institution)}</h3>
+              <p class="muted">${safeText(item.degree)} • ${safeText(item.period)}</p>
+              <p class="muted">${safeText(item.type)}${item.issuer ? ` • ${safeText(item.issuer)}` : ''}</p>
+            </header>
+            <p>${safeText(item.description)}</p>
+            ${details ? `<ul class="achievements">${details}</ul>` : ''}
+          </article>
+        `;
+      })
+      .join('');
+  }
+
   function renderSkills(skills) {
     const container = document.getElementById('skills-grid');
     if (!container || !Array.isArray(skills)) return;
@@ -380,6 +405,7 @@
 
       renderProfile(data.profile);
       renderAbout(data.about);
+      renderEducation(data.education);
       renderExperiences(data.experiences);
       renderSkills(data.skills);
       renderProjects(data.projects);
