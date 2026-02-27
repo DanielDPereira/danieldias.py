@@ -73,12 +73,16 @@
         .join('');
     }
 
+    const linkedin = Array.isArray(profile.socials)
+      ? profile.socials.find((social) => (safeText(social.label).toLowerCase() === 'linkedin'))
+      : null;
+
     const contactButtons = [
-      profile.email
-        ? `<a class="btn btn-primary" href="mailto:${safeText(profile.email)}"><i class="ri-mail-send-line"></i> Enviar e-mail</a>`
+      linkedin?.url
+        ? `<a class="btn btn-primary" href="${safeText(linkedin.url)}" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i> Conecte-se comigo!</a>`
         : '',
-      profile.cvUrl
-        ? `<a class="btn btn-ghost" href="${safeText(profile.cvUrl)}" target="_blank" rel="noopener noreferrer"><i class="ri-file-download-line"></i> Baixar CV</a>`
+      profile.email
+        ? `<a class="btn btn-ghost" href="mailto:${safeText(profile.email)}"><i class="ri-mail-send-line"></i> Enviar e-mail</a>`
         : ''
     ].join('');
 
