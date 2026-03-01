@@ -20,13 +20,24 @@ TEMPLATES = {
     "projects": {"title": "", "description": "", "longDescription": "", "category": "", "year": "", "status": "", "thumbnail": "", "images": [], "technologies": [], "links": []}
 }
 
+# Cores da Paleta Moderna
+BG_COLOR = "#f4f6f9"        # Fundo principal claro
+CARD_BG = "#ffffff"         # Fundo de itens/cards
+BORDER_COLOR = "#ced4da"    # Bordas inativas
+FOCUS_COLOR = "#3498db"     # Bordas ativas/selecionadas
+TEXT_COLOR = "#2d3436"      # Cor do texto principal
+TOP_BAR_BG = "#1e272e"      # Barra superior escura
+
 class ScrollableFrame(ttk.Frame):
     """Componente customizado para criar áreas com barra de rolagem vertical (Scroll)."""
     def __init__(self, container, *args, **kwargs):
         super().__init__(container, *args, **kwargs)
-        self.canvas = tk.Canvas(self, borderwidth=0, highlightthickness=0)
+        # Configurando o fundo do canvas para combinar com o app
+        self.canvas = tk.Canvas(self, borderwidth=0, highlightthickness=0, bg=BG_COLOR)
         self.scrollbar = ttk.Scrollbar(self, orient="vertical", command=self.canvas.yview)
-        self.inner_frame = ttk.Frame(self.canvas)
+        
+        # Frame interno com background claro
+        self.inner_frame = tk.Frame(self.canvas, bg=BG_COLOR)
 
         self.inner_frame.bind(
             "<Configure>",
@@ -47,9 +58,7 @@ class ScrollableFrame(ttk.Frame):
     def bind_mouse_wheel(self):
         def _on_mousewheel(event):
             self.canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
-        # Bind para Windows e Mac
         self.canvas.bind_all("<MouseWheel>", _on_mousewheel)
-        # Bind para Linux
         self.canvas.bind_all("<Button-4>", lambda e: self.canvas.yview_scroll(-1, "units"))
         self.canvas.bind_all("<Button-5>", lambda e: self.canvas.yview_scroll(1, "units"))
 
@@ -57,12 +66,20 @@ class ScrollableFrame(ttk.Frame):
 class PortfolioCRUDApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Gerenciador de Portfólio JSON Dinâmico")
-        self.root.geometry("1100x700")
+        self.root.title("Gerenciador de Portfólio JSON")
+        self.root.geometry("1100x750")
+        self.root.configure(bg=BG_COLOR)
+        
+        # Configurar Estilos Modernos do TTK
+        self.style = ttk.Style()
+        self.style.theme_use('clam') # Tema mais limpo e flat
+        self.style.configure("TNotebook", background=BG_COLOR, borderwidth=0)
+        self.style.configure("TNotebook.Tab", font=("Segoe UI", 10, "bold"), padding=[15, 5], background="#e1e5ea", foreground=TEXT_COLOR)
+        self.style.map("TNotebook.Tab", background=[("selected", CARD_BG)], foreground=[("selected", FOCUS_COLOR)])
         
         self.filepath = "portfolio-data.json"
         self.data = {}
-        self.current_selections = {} # Memoriza qual item está selecionado nas listas
+        self.current_selections = {}
         
         self.load_data()
         self.build_main_ui()
@@ -93,21 +110,22 @@ class PortfolioCRUDApp:
             messagebox.showerror("Erro", f"Erro ao salvar:\n{e}")
 
     def build_main_ui(self):
-        top_frame = tk.Frame(self.root, bg="#2c3e50", pady=10, padx=10)
+        # Barra superior (Header)
+        top_frame = tk.Frame(self.root, bg=TOP_BAR_BG, pady=15, padx=20)
         top_frame.pack(fill=tk.X)
         
-        lbl_title = tk.Label(top_frame, text="Painel de Edição", fg="white", bg="#2c3e50", font=("Arial", 14, "bold"))
+        lbl_title = tk.Label(top_frame, text="Painel de Edição de Portfólio", fg="white", bg=TOP_BAR_BG, font=("Segoe UI", 16, "bold"))
         lbl_title.pack(side=tk.LEFT)
 
-        btn_save = tk.Button(top_frame, text="💾 Salvar no JSON", bg="#27ae60", fg="white", font=("Arial", 10, "bold"), command=self.save_data)
+        btn_save = tk.Button(top_frame, text="💾 Salvar no JSON", bg="#20bf6b", fg="white", font=("Segoe UI", 10, "bold"), 
+                             relief="flat", cursor="hand2", padx=15, pady=6, activebackground="#26de81", activeforeground="white", command=self.save_data)
         btn_save.pack(side=tk.RIGHT)
 
         self.notebook = ttk.Notebook(self.root)
-        self.notebook.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        self.notebook.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
 
-        # Para cada chave raiz do JSON, cria uma aba
         for section_key, section_data in self.data.items():
-            tab = ttk.Frame(self.notebook)
+            tab = tk.Frame(self.notebook, bg=BG_COLOR)
             self.notebook.add(tab, text=section_key.replace('_', ' ').title())
             
             if isinstance(section_data, dict):
@@ -115,45 +133,47 @@ class PortfolioCRUDApp:
             elif isinstance(section_data, list):
                 self.build_list_tab(tab, section_key, section_data)
 
-    # =========================================================================
-    # RENDERIZAÇÃO DE ABAS SIMPLES (Ex: Profile, About)
-    # =========================================================================
     def build_dict_tab(self, parent, section_key, section_data):
         scroll_frame = ScrollableFrame(parent)
         scroll_frame.pack(fill=tk.BOTH, expand=True)
         
         def refresh_ui():
             for w in scroll_frame.inner_frame.winfo_children(): w.destroy()
+            # Adiciona um titulo na aba
+            tk.Label(scroll_frame.inner_frame, text=f"Editando {section_key.title()}", font=("Segoe UI", 14, "bold"), 
+                     bg=BG_COLOR, fg=TEXT_COLOR, pady=10).pack(anchor="w", padx=10)
             self.render_form(scroll_frame.inner_frame, section_data, refresh_ui)
 
         refresh_ui()
 
-    # =========================================================================
-    # RENDERIZAÇÃO DE ABAS COM LISTA (Ex: Projects, Experiences)
-    # =========================================================================
     def build_list_tab(self, parent, section_key, section_list):
-        paned = tk.PanedWindow(parent, orient=tk.HORIZONTAL)
-        paned.pack(fill=tk.BOTH, expand=True)
+        paned = ttk.PanedWindow(parent, orient=tk.HORIZONTAL)
+        paned.pack(fill=tk.BOTH, expand=True, pady=10)
 
-        left_frame = tk.Frame(paned, width=250)
-        paned.add(left_frame)
+        left_frame = tk.Frame(paned, bg=BG_COLOR)
+        paned.add(left_frame, weight=1)
 
-        listbox = tk.Listbox(left_frame, font=("Arial", 10), exportselection=False)
-        listbox.pack(fill=tk.BOTH, expand=True, pady=5)
+        # Listbox Estilizado
+        listbox = tk.Listbox(left_frame, font=("Segoe UI", 11), exportselection=False, bg=CARD_BG, fg=TEXT_COLOR,
+                             selectbackground=FOCUS_COLOR, selectforeground="white", relief="flat", 
+                             highlightthickness=1, highlightcolor=BORDER_COLOR, highlightbackground=BORDER_COLOR, activestyle="none")
+        listbox.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
 
         right_frame = ScrollableFrame(paned)
-        paned.add(right_frame)
+        paned.add(right_frame, weight=3)
 
         def refresh_listbox():
             listbox.delete(0, tk.END)
             for index, item in enumerate(self.data[section_key]):
                 display_name = item.get('title', item.get('name', item.get('institution', f"Item {index + 1}")))
-                listbox.insert(tk.END, display_name)
+                listbox.insert(tk.END, f"  {display_name}") # Espaço extra para padding visual
 
         def refresh_right_frame():
             for w in right_frame.inner_frame.winfo_children(): w.destroy()
             idx = self.current_selections.get(section_key, None)
             if idx is not None and idx < len(self.data[section_key]):
+                tk.Label(right_frame.inner_frame, text="Detalhes do Item", font=("Segoe UI", 14, "bold"), 
+                         bg=BG_COLOR, fg=TEXT_COLOR, pady=10).pack(anchor="w", padx=10)
                 self.render_form(right_frame.inner_frame, self.data[section_key][idx], refresh_right_frame)
                 
         def on_select(event):
@@ -165,13 +185,17 @@ class PortfolioCRUDApp:
         listbox.bind("<<ListboxSelect>>", on_select)
         refresh_listbox()
 
-        btn_frame = tk.Frame(left_frame)
+        # Botões da Listbox
+        btn_frame = tk.Frame(left_frame, bg=BG_COLOR)
         btn_frame.pack(fill=tk.X)
         
-        tk.Button(btn_frame, text="➕ Novo", bg="#3498db", fg="white", 
-                  command=lambda: self.add_top_list_item(section_key, refresh_listbox)).pack(side=tk.LEFT, fill=tk.X, expand=True)
-        tk.Button(btn_frame, text="🗑️ Excluir", bg="#e74c3c", fg="white", 
-                  command=lambda: self.delete_top_list_item(section_key, listbox, refresh_listbox, right_frame.inner_frame)).pack(side=tk.RIGHT, fill=tk.X, expand=True)
+        tk.Button(btn_frame, text="➕ Novo", bg=FOCUS_COLOR, fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 10, "bold"),
+                  activebackground="#2980b9", activeforeground="white", pady=5,
+                  command=lambda: self.add_top_list_item(section_key, refresh_listbox)).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 5))
+        
+        tk.Button(btn_frame, text="🗑️ Excluir", bg="#eb3b5a", fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 10, "bold"),
+                  activebackground="#fc5c65", activeforeground="white", pady=5,
+                  command=lambda: self.delete_top_list_item(section_key, listbox, refresh_listbox, right_frame.inner_frame)).pack(side=tk.RIGHT, fill=tk.X, expand=True, padx=(5, 0))
 
     def add_top_list_item(self, section_key, refresh_callback):
         template = TEMPLATES.get(section_key, {"title": "Novo Item"}).copy()
@@ -187,26 +211,22 @@ class PortfolioCRUDApp:
             refresh_callback()
             for w in right_inner_frame.winfo_children(): w.destroy()
 
-    # =========================================================================
-    # MOTOR DE RENDERIZAÇÃO DE FORMULÁRIO DINÂMICO
-    # =========================================================================
     def render_form(self, container, data_dict, refresh_callback):
-        """Varre o dicionário e cria o input correto para o tipo de dado."""
         for key, value in data_dict.items():
-            row = tk.Frame(container, pady=8)
+            row = tk.Frame(container, bg=BG_COLOR, pady=5)
             row.pack(fill=tk.X, padx=10)
             
-            lbl = tk.Label(row, text=key.title()+":", width=18, anchor='ne', font=("Arial", 10, "bold"))
+            lbl = tk.Label(row, text=key.replace("_", " ").title()+":", width=18, anchor='ne', 
+                           font=("Segoe UI", 10, "bold"), bg=BG_COLOR, fg="#4b6584", pady=5)
             lbl.pack(side=tk.LEFT, fill=tk.Y)
             
             if isinstance(value, list):
                 if key in LISTS_OF_DICTS:
-                    # Renderiza sub-formulário de Dicionários (ex: links, socials)
                     self.render_nested_dicts(row, key, value, refresh_callback)
                 else:
-                    # Renderiza lista de Strings (ex: achievements, technologies)
-                    tk.Label(row, text="(Um item por linha)", font=("Arial", 8), fg="gray").pack(side=tk.LEFT)
-                    txt = tk.Text(row, height=5, width=50)
+                    tk.Label(row, text="(Um item\npor linha)", font=("Segoe UI", 8), fg="#778ca3", bg=BG_COLOR).pack(side=tk.LEFT, padx=(0,5))
+                    txt = tk.Text(row, height=4, width=50, font=("Segoe UI", 10), relief="flat", 
+                                  highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
                     txt.insert(tk.END, "\n".join(value))
                     txt.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
                     
@@ -217,17 +237,18 @@ class PortfolioCRUDApp:
                     
             elif isinstance(value, bool):
                 var = tk.BooleanVar(value=value)
-                chk = tk.Checkbutton(row, variable=var)
+                # O style de Checkbutton varia no ttk, usando tk puro com cor de fundo para consistência
+                chk = tk.Checkbutton(row, variable=var, bg=BG_COLOR, activebackground=BG_COLOR, cursor="hand2")
                 chk.pack(side=tk.LEFT, padx=5)
                 def update_bool(*args, k=key, v=var, d=data_dict):
                     d[k] = v.get()
                 var.trace_add("write", update_bool)
                 
             else:
-                # String ou Inteiro
                 val_str = str(value)
                 if len(val_str) > 60 or key in ["description", "longDescription", "paragraphs"]:
-                    txt = tk.Text(row, height=4, width=50)
+                    txt = tk.Text(row, height=4, width=50, font=("Segoe UI", 10), relief="flat", 
+                                  highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
                     txt.insert(tk.END, val_str)
                     txt.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
                     
@@ -240,8 +261,9 @@ class PortfolioCRUDApp:
                     txt.bind("<KeyRelease>", update_txt)
                 else:
                     var = tk.StringVar(value=val_str)
-                    ent = tk.Entry(row, textvariable=var, width=50)
-                    ent.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
+                    ent = tk.Entry(row, textvariable=var, width=50, font=("Segoe UI", 10), relief="flat", 
+                                   highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
+                    ent.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5, ipady=4)
                     
                     def update_ent(*args, k=key, v=var, d=data_dict, orig=value):
                         new_val = v.get()
@@ -252,52 +274,54 @@ class PortfolioCRUDApp:
                     var.trace_add("write", update_ent)
 
     def render_nested_dicts(self, parent, key, list_data, refresh_callback):
-        """Cria um quadro para editar Listas Aninhadas (ex: Links, Redes Sociais)."""
-        container = tk.LabelFrame(parent, text=f" Editar {key.title()} ", bg="#f1f2f6", padx=5, pady=5)
+        # Substitui o LabelFrame datado por um Frame limpo estilo Card
+        container = tk.Frame(parent, bg=BG_COLOR)
         container.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
         
+        # Título da sub-seção
+        tk.Label(container, text=f"Gerenciar {key.title()}", bg=BG_COLOR, fg="#4b6584", font=("Segoe UI", 10, "bold")).pack(anchor="w", pady=(0,5))
+        
         for i, item_dict in enumerate(list_data):
-            # Caixa individual para cada item (ex: um Link específico)
-            item_frame = tk.Frame(container, bg="#ffffff", highlightbackground="#bdc3c7", highlightthickness=1, pady=5)
-            item_frame.pack(fill=tk.X, pady=3)
+            # Card Item
+            item_frame = tk.Frame(container, bg=CARD_BG, highlightbackground=BORDER_COLOR, highlightthickness=1, pady=8, padx=8)
+            item_frame.pack(fill=tk.X, pady=4)
             
-            inputs_frame = tk.Frame(item_frame, bg="#ffffff")
+            inputs_frame = tk.Frame(item_frame, bg=CARD_BG)
             inputs_frame.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
             
-            # Renderiza os campinhos internos
             for k, v in item_dict.items():
-                row = tk.Frame(inputs_frame, bg="#ffffff")
-                row.pack(fill=tk.X, pady=2)
+                row = tk.Frame(inputs_frame, bg=CARD_BG)
+                row.pack(fill=tk.X, pady=3)
                 
-                tk.Label(row, text=k.title()+":", bg="#ffffff", width=10, anchor="w").pack(side=tk.LEFT)
+                tk.Label(row, text=k.title()+":", bg=CARD_BG, width=10, anchor="w", font=("Segoe UI", 9)).pack(side=tk.LEFT)
                 var = tk.StringVar(value=str(v))
-                ent = tk.Entry(row, textvariable=var)
-                ent.pack(side=tk.LEFT, fill=tk.X, expand=True)
+                ent = tk.Entry(row, textvariable=var, font=("Segoe UI", 9), relief="flat", 
+                               highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
+                ent.pack(side=tk.LEFT, fill=tk.X, expand=True, ipady=3)
                 
-                # Atualiza valor interno
                 def update_val(*args, item_ref=item_dict, key_ref=k, var_ref=var):
                     item_ref[key_ref] = var_ref.get()
                 var.trace_add("write", update_val)
             
-            # Botão de remover o sub-item
-            btn_del = tk.Button(item_frame, text="X", bg="#e74c3c", fg="white", font=("Arial", 8, "bold"),
+            btn_del = tk.Button(item_frame, text="✖", bg="#eb3b5a", fg="white", font=("Segoe UI", 8, "bold"),
+                                relief="flat", cursor="hand2", activebackground="#fc5c65", activeforeground="white",
                                 command=lambda idx=i: self.delete_nested_item(list_data, idx, refresh_callback))
-            btn_del.pack(side=tk.RIGHT, padx=10)
+            btn_del.pack(side=tk.RIGHT, padx=(10, 0))
             
-        # Botão para adicionar novo sub-item
-        btn_add = tk.Button(container, text=f"➕ Adicionar {key}", bg="#2ecc71", fg="white",
+        btn_add = tk.Button(container, text=f"➕ Adicionar {key}", bg="#20bf6b", fg="white", relief="flat", cursor="hand2", 
+                            font=("Segoe UI", 9, "bold"), activebackground="#26de81", activeforeground="white", pady=4,
                             command=lambda: self.add_nested_item(key, list_data, refresh_callback))
-        btn_add.pack(pady=5)
+        btn_add.pack(anchor="w", pady=5)
 
     def delete_nested_item(self, list_data, idx, refresh_callback):
-        if messagebox.askyesno("Confirmar", "Remover este item?"):
+        if messagebox.askyesno("Confirmar", "Remover este sub-item?"):
             del list_data[idx]
-            refresh_callback() # Recarrega a tela para atualizar a lista aninhada
+            refresh_callback()
 
     def add_nested_item(self, key, list_data, refresh_callback):
         template = TEMPLATES.get(key, {"chave": ""}).copy()
         list_data.append(template)
-        refresh_callback() # Recarrega a tela para mostrar o novo campo
+        refresh_callback()
 
 
 if __name__ == "__main__":
