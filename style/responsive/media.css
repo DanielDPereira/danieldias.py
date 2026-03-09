@@ -4,6 +4,15 @@
     grid-template-columns: 1fr;
   }
 
+  .projects-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-filter-search,
+  .projects-filter-results {
+    grid-column: 1 / -1;
+  }
+
   .contact-actions {
     justify-content: flex-start;
   }
@@ -37,6 +46,10 @@
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .projects-filters {
+    grid-template-columns: 1fr;
   }
 
   .projects-grid {

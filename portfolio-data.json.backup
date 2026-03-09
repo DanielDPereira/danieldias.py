@@ -134,6 +134,21 @@
                 "Docker",
                 "Automação"
             ]
+        },
+        {
+            "title": "ESTAGIO",
+            "company": "SIM",
+            "companyUrl": "SIM",
+            "type": "SIM",
+            "period": "NÃO",
+            "location": "SJC",
+            "description": "HMMMM",
+            "achievements": [
+                "PYTHON"
+            ],
+            "technologies": [
+                "VIBE CODING"
+            ]
         }
     ],
     "certificates": [
@@ -592,6 +607,30 @@
                     "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_dataanalytics-dashboard-webdevelopment-activity-7427096690605649920-bj0s?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
                 }
             ]
+        },
+        {
+            "title": "WFHWEHFEW",
+            "description": "WEJLNWELNJ",
+            "longDescription": "FWFW",
+            "category": "454",
+            "year": "543",
+            "status": "FVSDFWFVFEWD",
+            "thumbnail": "",
+            "images": [],
+            "technologies": [],
+            "links": []
+        },
+        {
+            "title": "",
+            "description": "",
+            "longDescription": "",
+            "category": "",
+            "year": "",
+            "status": "",
+            "thumbnail": "",
+            "images": [],
+            "technologies": [],
+            "links": []
         }
     ]
 }

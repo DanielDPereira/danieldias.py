@@ -114,6 +114,66 @@
   gap: 1rem;
 }
 
+.projects-filters {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.3fr) repeat(2, minmax(170px, 1fr)) auto;
+  gap: 0.75rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.projects-filter-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.projects-filter-field span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.projects-filter-field input,
+.projects-filter-field select {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  padding: 0.58rem 0.72rem;
+  font-size: 0.9rem;
+}
+
+.projects-filter-field input::placeholder {
+  color: #8f9abb;
+}
+
+.projects-filter-field input:focus-visible,
+.projects-filter-field select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.projects-filter-reset {
+  min-height: 40px;
+}
+
+.projects-filter-results {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.projects-empty {
+  border: 1px dashed var(--border);
+  border-radius: 0.9rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .project-card {
   border: 1px solid var(--border);
   border-radius: 1rem;
